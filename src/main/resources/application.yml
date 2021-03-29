@@ -1,0 +1,23 @@
+server:
+  port: 9002
+  servlet:
+    context-path: /payment/api
+
+spring:
+  hateoas:
+    use-hal-as-default-json-media-type: false
+  application:
+    name: api-payment
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment?allowPublicKeyRetieval=true&sslMode=DISABLED&useSSL=false&serverTimezone=America/Sao_Paulo
+    username: root
+    password: mysql
+  jmx:
+    enabled: false

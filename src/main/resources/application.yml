@@ -4,8 +4,6 @@ server:
     context-path: /payment/api
 
 spring:
-  hateoas:
-    use-hal-as-default-json-media-type: false
   application:
     name: api-payment
   jpa:
@@ -21,3 +19,15 @@ spring:
     password: mysql
   jmx:
     enabled: false
+  hateoas:
+    use-hal-as-default-json-media-type: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+crud:
+  rabbitmq:
+    exchange: crud.exchange
+    queue: crud.products.queue
